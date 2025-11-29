@@ -14,7 +14,9 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return response()->json($categories);
+        return response()->json([
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -31,7 +33,9 @@ class CategoryController extends Controller
     public function show(string $id)
     {
         $category = Category::findOrFail($id);
-        return response()->json($category);
+        return response()->json([
+            'category' => $category
+        ]);
     }
 
     /**
