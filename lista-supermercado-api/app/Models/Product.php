@@ -18,4 +18,9 @@ class Product extends Model
         'unit_measure',
         'barcode',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
