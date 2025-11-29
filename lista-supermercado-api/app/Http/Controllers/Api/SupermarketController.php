@@ -14,7 +14,9 @@ class SupermarketController extends Controller
     public function index()
     {
         $supermarkets = Supermarket::all();
-        return response()->json($supermarkets);
+        return response()->json([
+            'supermarkets' => $supermarkets
+        ]);
     }
 
     /**
@@ -31,7 +33,9 @@ class SupermarketController extends Controller
     public function show(string $id)
     {
         $supermarket = Supermarket::findOrFail($id);
-        return response()->json($supermarket);
+        return response()->json([
+            'supermarket' => $supermarket
+        ]);
     }
 
     /**
